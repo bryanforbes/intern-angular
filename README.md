@@ -7,7 +7,7 @@ This is a test project to demonstrate using Intern with Angular 4+. It contains 
 ### Clone the repo
 
 ```shell
-git clone https://github.com/bryanforbes/intern-angular
+git clone https://github.com/theintern/intern-angular
 cd intern-angular
 ```
 
@@ -55,7 +55,7 @@ const { expect } = intern.getPlugin('chai');
 
 Most of these interfaces behave similarly to jasmine or mocha with a couple of exceptions. First, `before`, `after`, `beforeEach`, `afterEach`, and `it` can all take a function that returns a promise or is defined with `async` and Intern will wait until that promise has resolved before proceeding to the next test/lifecycle function.
 
-**It should be noted** that Intern currently (alpha.9) does not wait for a promise to resolve if there are multiple of the same lifecycle functions in one `describe` block. For instance, this is quite common to see in Angular tests:
+**It should be noted** that Intern currently (alpha.14) does not wait for a promise to resolve if there are multiple of the same lifecycle functions in one `describe` block. For instance, this is quite common to see in Angular tests:
 
 ```ts
 beforeEach(async(() => {
@@ -89,7 +89,7 @@ beforeEach(async () => {
 
 Since Intern comes with Chai bundled, many of the expectations had to be rewritten. Most of these were simply changing `.toBe()` to `.to.equal()` or `toMatch()` to `to.match()`.
 
-Another change was from using jasmine's `spyOn()` to Sinon.JS's `spy()` and `stub()` as well as `sinon-chai` to add expectations for stubs and spies to `expect()`.
+Another change was from using jasmine's `spyOn()` to Sinon's `spy()` and `stub()` as well as `sinon-chai` to add expectations for stubs and spies to `expect()`.
 
 ### Asynchronous functions
 
